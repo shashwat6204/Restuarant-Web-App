@@ -5,10 +5,11 @@ module.exports = {
   ],
   theme: {
     extend: {colors: {
-      primary: '#001C30',
-      secondary: '#176B87',
-      accent: '#64CCC5',
-      background: '#DAFFFB',
+      primary: '#FF8C00',    // Dark Orange
+      secondary: '#FFD700',  // Gold
+      accent: '#FFA07A',     // Light Salmon
+      background: '#FFDAB9'  // Peach Puff
+      ,
     }},
   },
   plugins: [],
