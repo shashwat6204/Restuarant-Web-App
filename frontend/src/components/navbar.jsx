@@ -1,18 +1,25 @@
 import React from 'react';
+import logo from '../images/logo.png'; // Replace with the actual path to your round logo image
 
 const Navbar = () => {
   return (
     <header className="bg-gray-800 text-white p-4">
       <div className="container mx-auto flex items-center justify-between">
-        <div className="logo">
-          <h1 className="text-2xl font-bold">Delicious Eats</h1>
+        {/* Round Logo */}
+        <div className="logo rounded-full overflow-hidden">
+          <img src={logo} alt="Delicious Eats Logo" className="h-12 w-12 object-cover" />
         </div>
+
+        {/* Brand Name */}
+        <h1 className="text-3xl font-bold text-yellow-500 ml-4">Delicious Eats</h1>
+
+        {/* Navigation Menu */}
         <nav>
-          <ul className="flex space-x-4">
+          <ul className="flex space-x-6">
             <li className="hover:underline">Home</li>
             <li className="hover:underline">Menu</li>
-            <li className="hover:underline">Specials</li>
-            <li className="hover:underline">Contact</li>
+            <li className="hover:underline">Reservation</li>
+            <li className="hover:underline">About us</li>
           </ul>
         </nav>
       </div>
