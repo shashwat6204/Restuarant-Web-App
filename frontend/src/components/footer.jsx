@@ -3,7 +3,7 @@ import backgroundImage from '../images/Mbackgroundimg.jpg';
 
 function Footer() {
   return (
-    <footer className="relative bg-gray-800 bg-opacity-50 text-white text-lg p-4 text-center">
+    <footer className="relative bg-gray-800 bg-opacity-50 text-white text-lg p-2 text-center">
       <div
         className="absolute top-0 left-0 right-0 bottom-0 bg-cover bg-center filter blur-md"
         style={{ backgroundImage: `url(${backgroundImage})` }}></div>

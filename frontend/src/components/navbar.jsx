@@ -5,7 +5,7 @@ import backgroundImage from '../images/Mbackgroundimg.jpg';
 
 const Navbar = () => {
   return (
-    <header className="relative bg-gray-800 bg-opacity-50 text-white text-lg p-4 text-center">
+    <header className="relative bg-gray-800 bg-opacity-50 text-white text-lg p-3 text-center">
       <div
         className="absolute top-0 left-0 right-0 bottom-0 bg-cover bg-center filter blur-md"
         style={{ backgroundImage: `url(${backgroundImage})` }}

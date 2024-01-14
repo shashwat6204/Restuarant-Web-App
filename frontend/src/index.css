@@ -11,10 +11,10 @@
 
 /* Define custom colors */
 :root {
-  --primary: #FF8C00;      /* Dark Orange */
+  --primary:#FF8C00;      /* Dark Orange */
   --secondary: #FFD700;    /* Gold */
   --accent: #FFA07A;       
-  --background: #56753f;  
+  --background:  #eebe3c;  
 }
 /* Use custom fonts and colors in styling */
 body {
