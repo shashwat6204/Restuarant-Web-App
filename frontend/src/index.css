@@ -5,29 +5,35 @@
 
 /* Your existing styles */
 /* ... */
+
+/* Define custom fonts */
+@import url('https://fonts.googleapis.com/css2?family=Brush+Script+MT&display=swap');
+
 /* Define custom colors */
 :root {
   --primary: #FF8C00;      /* Dark Orange */
   --secondary: #FFD700;    /* Gold */
-  --accent: #FFA07A;       /* Light Salmon */
-  --background: #FFDAB9;   /* Peach Puff */
+  --accent: #FFA07A;       
+  --background: #56753f;  
 }
-
-/* Use custom colors in styling */
+/* Use custom fonts and colors in styling */
 body {
   background-color: var(--background);
   color: var(--primary);
+  font-family: 'Papyrus'; /* Apply the custom font to the body */
   /* Other styles for the body */
 }
 
 /* Apply the custom colors to other elements as needed */
 h1, h2, h3, h4, h5, h6 {
   color: var(--primary);
+  font-family: 'Papyrus'; /* Apply the custom font to headings */
 }
 
 /* Example: Styling a button with the accent color */
 .btn {
   background-color: var(--accent);
   color: var(--primary);
+  font-family: 'Papyrus'; /* Apply the custom font to the button */
   /* Other styles for the button */
 }

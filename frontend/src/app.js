@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import HomePage from './homepage';
 import MenuPage from './menupage';
 import ReservationPage from './ReservationPage';
+import AboutUs from './about'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/menu" element={<MenuPage />} />
         <Route path="/reservation" element={<ReservationPage />} />
+        <Route path="/about" element={<AboutUs />} />
       </Routes>
     </Router>
   );
