@@ -17,9 +17,9 @@ const MenuPage = () => {
     {
       category: 'First Courses',
       items: [
-        { name: 'Spaghetti Carbonara', price: '$16.99' },
-        { name: 'Mushroom Risotto', price: '$18.99' },
-        { name: 'Gnocchi alla Sorrentina', price: '$15.99' },
+        { name: 'Croissant', price: '$15.99' },
+        { name: 'Spaghetti Carbonara', price: '$14.99' },
+        { name: 'Mushroom Risotto', price: '$16.99' },
       ],
     },
     {

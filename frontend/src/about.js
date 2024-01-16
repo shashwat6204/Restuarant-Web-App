@@ -13,7 +13,7 @@ const AboutUsPage = () => {
 
       {/* About Us Section */}
       <section className="container mx-auto mt-8 p-8 bg-white shadow-md rounded-md">
-        <h2 className="text-4xl font-bold mb-6 text-accent">Welcome to Maple Leaf</h2>
+        <h2 className="text-4xl font-bold mb-6 text-accent">Welcome to Maple Leaf</h2>  
         <p className="text-gray-700 mb-4">
           Indulge in a culinary journey at Maple Leaf, where each dish is a masterpiece. We are
           dedicated to providing an exquisite dining experience, celebrating flavors, artful

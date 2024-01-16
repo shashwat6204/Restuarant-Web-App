@@ -1,5 +1,5 @@
 // ReservationPage.js
-
+import axios from 'axios';
 import React, { useState } from 'react';
 import Navbar from './components/navbar';
 import Footer from './components/footer';
@@ -21,13 +21,14 @@ const ReservationPage = () => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
+// Example using axios
 
-  // Handle form submission
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Add your reservation submission logic here
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  
+  try {
+    await axios.post('http://localhost:3000/reservation', formData);
     console.log('Reservation submitted:', formData);
-    // Clear the form after submission
     setFormData({
       name: '',
       email: '',
@@ -36,7 +37,10 @@ const ReservationPage = () => {
       time: '',
       guests: '',
     });
-  };
+  } catch (error) {
+    console.error('Error submitting reservation:', error);
+  }
+};
 
   return (
     <div className="font-sans bg-gray-100">
