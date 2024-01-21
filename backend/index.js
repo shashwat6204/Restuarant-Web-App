@@ -1,42 +1,38 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const cors = require('cors');
+const jwt =require('jsonwebtoken');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 // Middleware
 app.use(bodyParser.json());
 
-// MongoDB connection (replace 'your_database_url' with your MongoDB connection string)
-mongoose.connect('mongodb://your_username:your_password@your_cluster.mongodb.net/your_database', {
-  useNewUrlParser: true, // Optional, but no longer needed in recent versions
-  useUnifiedTopology: true, // Optional, but no longer needed in recent versions
-  useCreateIndex: true, // New option to handle index creation
-  useFindAndModify: false // New option to handle deprecated methods
-});
+app.use(cors({
+  origin: 'http://localhost:3000', // Replace with your React app's domain
+}));
 
-const db = mongoose.connection;
-
-db.on('error', console.error.bind(console, 'MongoDB connection error:'));
-db.once('open', () => {
-  console.log('Connected to MongoDB');
-});
+// Connect to MongoDB
+mongoose.connect('mongodb+srv://shashwatcse6204:Shadow6204@cluster0.z3kjs.mongodb.net/?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log('MongoDB connected'))
+  .catch(err => console.error('MongoDB connection error:', err));
 
 // Reservation Schema
 const reservationSchema = new mongoose.Schema({
-  name: String,
-  email: String,
-  phone: String,
-  date: String,
-  time: String,
+  name: { type: String, required: true },
+  email: { type: String, required: true },
+  phone: { type: String, required: true },
+  date: { type: String, required: true },
+  time: { type: String, required: true },
   guests: Number,
 });
 
 const Reservation = mongoose.model('Reservation', reservationSchema);
 
 // API Endpoint to Handle Reservation Submissions
-app.post('/api/reservations', async (req, res) => {
+app.post('/reservation', async (req, res) => {
   try {
     const newReservation = new Reservation(req.body);
     await newReservation.save();

@@ -3,7 +3,7 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import Navbar from './components/navbar';
 import Footer from './components/footer';
-import './index.css';
+import './reservation.css'; // Import the external stylesheet
 
 const ReservationPage = () => {
   // State for form data
@@ -21,29 +21,31 @@ const ReservationPage = () => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
-// Example using axios
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
-  
-  try {
-    await axios.post('http://localhost:3000/reservation', formData);
-    console.log('Reservation submitted:', formData);
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      date: '',
-      time: '',
-      guests: '',
-    });
-  } catch (error) {
-    console.error('Error submitting reservation:', error);
-  }
-};
+  // Example using axios
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      await axios.post('http://localhost:3001/reservation', formData);
+      console.log('Reservation submitted:', formData);
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        date: '',
+        time: '',
+        guests: '',
+      });
+      window.alert('Reservation submitted successfully!');
+    } catch (error) {
+      console.error('Error submitting reservation:', error);
+      window.alert('Error submitting reservation. Please try again.');
+    }
+  };
 
   return (
-    <div className="font-sans bg-gray-100">
+    <div className="font-sans">
       {/* Navbar Component */}
       <header className="bg-gradient-to-r from-primary to-secondary bg-gray-800 text-white text-center py-4 relative z-10">
         <Navbar />
@@ -51,12 +53,15 @@ const handleSubmit = async (e) => {
 
       {/* Reservation Form Section */}
       <section className="container mx-auto flex items-center justify-center mt-8">
-        <div className="w-full md:w-1/2 p-8 bg-white shadow-md rounded-md">
+        <div className="form-container">
           <h2 className="text-3xl font-bold mb-6">Make a Reservation</h2>
+
           <form onSubmit={handleSubmit}>
             {/* Name Input */}
-            <div className="mb-4">
-              <label htmlFor="name" className="block text-gray-600">Name</label>
+            <div className="form-group">
+              <label htmlFor="name" className="block text-gray-600">
+                Name
+              </label>
               <input
                 type="text"
                 id="name"
@@ -69,8 +74,10 @@ const handleSubmit = async (e) => {
             </div>
 
             {/* Email Input */}
-            <div className="mb-4">
-              <label htmlFor="email" className="block text-gray-600">Email</label>
+            <div className="form-group">
+              <label htmlFor="email" className="block text-gray-600">
+                Email
+              </label>
               <input
                 type="email"
                 id="email"
@@ -83,8 +90,10 @@ const handleSubmit = async (e) => {
             </div>
 
             {/* Phone Input */}
-            <div className="mb-4">
-              <label htmlFor="phone" className="block text-gray-600">Phone</label>
+            <div className="form-group">
+              <label htmlFor="phone" className="block text-gray-600">
+                Phone
+              </label>
               <input
                 type="tel"
                 id="phone"
@@ -97,8 +106,10 @@ const handleSubmit = async (e) => {
             </div>
 
             {/* Date Input */}
-            <div className="mb-4">
-              <label htmlFor="date" className="block text-gray-600">Date</label>
+            <div className="form-group">
+              <label htmlFor="date" className="block text-gray-600">
+                Date
+              </label>
               <input
                 type="date"
                 id="date"
@@ -111,8 +122,10 @@ const handleSubmit = async (e) => {
             </div>
 
             {/* Time Input */}
-            <div className="mb-4">
-              <label htmlFor="time" className="block text-gray-600">Time</label>
+            <div className="form-group">
+              <label htmlFor="time" className="block text-gray-600">
+                Time
+              </label>
               <input
                 type="time"
                 id="time"
@@ -125,8 +138,10 @@ const handleSubmit = async (e) => {
             </div>
 
             {/* Guests Input */}
-            <div className="mb-4">
-              <label htmlFor="guests" className="block text-gray-600">Number of Guests</label>
+            <div className="form-group">
+              <label htmlFor="guests" className="block text-gray-600">
+                Number of Guests
+              </label>
               <input
                 type="number"
                 id="guests"
@@ -141,7 +156,7 @@ const handleSubmit = async (e) => {
             {/* Submit Button */}
             <button
               type="submit"
-              className="bg-accent text-white px-4 py-2 rounded-md hover:bg-secondary"
+              className="submit-btn"
             >
               Submit Reservation
             </button>
@@ -150,7 +165,7 @@ const handleSubmit = async (e) => {
       </section>
 
       {/* Footer Component */}
-      <footer className="bg-gray-800 text-white text-center py-4 mt-8">
+      <footer className="footer">
         <Footer />
       </footer>
     </div>

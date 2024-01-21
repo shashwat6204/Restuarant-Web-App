@@ -3,12 +3,13 @@ import Navbar from './components/navbar';
 import Footer from './components/footer';
 import './index.css';
 
+
 const MenuPage = () => {
   // Sample Italian menu data
   const italianMenu = [
     {
       category: 'Starters',
-      items: [
+      items: [  
         { name: 'Tomato Bruschetta', price: '$10.99' },
         { name: 'Caprese Salad', price: '$12.99' },
         { name: 'Prosciutto and Melon', price: '$14.99' },
