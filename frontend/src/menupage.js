@@ -65,18 +65,18 @@ const MenuPage = () => {
 
       {/* Menu Section */}
       <section className="p-40 bg-yellow-200 bg-opacity-95 shadow-md rounded-md">
-        <h2 className="text-4xl font-bold mb-16 text-accent">Our Menu (Il Nostro Menù)</h2>
+        <h2 className="text-4xl font-bold mb-8 text-accent">Our Menu (Il Nostro Menù)</h2>
 
         {/* Menu Categories */}
         {italianMenu.map((category) => (
-          <div key={category.category} className="mb-8">
-            <h3 className="text-2xl font-bold mb-4 text-primary">{category.category}</h3>
+          <div key={category.category} className="mb-4">
+            <h3 className="text-2xl font-bold mb-2 text-primary">{category.category}</h3>
             {/* Menu Items */}
             <div className="flex flex-wrap">
               {category.items.map((item) => (
                 <div
                   key={item.name}
-                  className="w-full md:w-1/3 flex flex-col items-center mb-1 text-gray-700"
+                  className="w-full md:w-1/3 flex flex-col items-center mb-2 text-gray-700"
                 >
                   {/* Image */}
                   <img
