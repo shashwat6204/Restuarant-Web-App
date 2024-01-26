@@ -1,11 +1,9 @@
-// MenuPage.js
-
 import React from 'react';
 import Navbar from './components/navbar';
 import Footer from './components/footer';
-import './reservation.css';
+import './menuPage.css';
 
-// Import images
+// Import images (assuming these are the correct import paths)
 import tomatoBruschettaImage from './images/tomato_bruschetta.jpeg';
 import capreseSaladImage from './images/caprese_salad.jpeg';
 import prosciuttoMelonImage from './images/prosciutto_melon.jpeg';
@@ -57,36 +55,42 @@ const MenuPage = () => {
   ];
 
   return (
-    <div className="font-sans bg-gray-100">
+    <div className="font-sans bg-gray-800">
       {/* Navbar Component */}
-      <header className="bg-gradient-to-r from-primary to-secondary bg-gray-800 text-white text-center py-4 relative z-10">
+      <header className="bg-black text-white py-2">
         <Navbar />
       </header>
 
+      <section className="text-white text-center py-16">
+        <h1 className="text-4xl font-bold mb-2 animate-fade-in">Welcome to Our Restaurant</h1>
+        <p className="text-lg animate-fade-in">
+          Experience the finest culinary delights crafted with passion and perfection.
+        </p>
+      </section>
       {/* Menu Section */}
-      <section className="p-40 bg-yellow-200 bg-opacity-95 shadow-md rounded-md">
-        <h2 className="text-4xl font-bold mb-8 text-accent">Our Menu (Il Nostro Menù)</h2>
+      <section className="container p-5 bg-gray-400 shadow-md rounded-md">
+        <h2 className="text-4xl font-bold mb-4 text-info">Our Menu (Il Nostro Menù)</h2>
 
         {/* Menu Categories */}
         {italianMenu.map((category) => (
           <div key={category.category} className="mb-4">
             <h3 className="text-2xl font-bold mb-2 text-primary">{category.category}</h3>
             {/* Menu Items */}
-            <div className="flex flex-wrap">
+            <div className="row">
               {category.items.map((item) => (
                 <div
                   key={item.name}
-                  className="w-full md:w-1/3 flex flex-col items-center mb-2 text-gray-700"
+                  className="col-md-4 d-flex flex-column align-items-center text-gray-700 transition-transform transform hover:scale-105"
                 >
                   {/* Image */}
                   <img
                     src={item.image}
                     alt={item.name}
-                    className="w-48 h-48 object-cover rounded-md mb-2"
+                    className="w-100 h-100 object-cover rounded-md mb-2"
                   />
                   {/* Item Details */}
-                  <p className="font-bold">{item.name}</p>
-                  <p className="text-accent">{item.price}</p>
+                  <p className="font-weight-bold">{item.name}</p>
+                  <p className="text-info-black">{item.price}</p>
                 </div>
               ))}
             </div>
@@ -95,7 +99,7 @@ const MenuPage = () => {
       </section>
 
       {/* Footer Component */}
-      <footer className="bg-gray-800 text-white text-center py-4 relative z-10">
+      <footer className="bg-black text-white text-center py-2 relative z-10">
         <Footer />
       </footer>
     </div>

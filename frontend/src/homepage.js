@@ -40,14 +40,13 @@ const Homepage = () => {
           </div>
         </div>
 
-        <header className="bg-gradient-to-r from-primary to-secondary bg-gray-800 text-white text-center py-4 relative z-10">
+        <header className="bg-black text-white py-2">
           <Navbar />
         </header>
       </div>
       <section
-        id="featured-dish"
-        className="mt-1">
-        <h2 className="text-2xl font-bold mb-1 text-white">Featured Dish</h2>
+        id="featured-dish">
+        <h2 className="bg-gray-400 text-2xl font-bold text-white">Featured Dish</h2>
         <div className="bg-white shadow-md p-6 rounded-md flex items-center" style={{  backgroundImage: `url(${background})`, backgroundSize: 'cover', backgroundPosition: 'center', minHeight: '100px' }}>
         <img src={featuredDish}  alt="Featured Dish"  className="w-24 h-24 object-cover rounded-full border-4 border-yellow-300"/>
           <div> 
@@ -57,9 +56,8 @@ const Homepage = () => {
         </div>
       </section>
       <section
-        id="menu"
-        className="mt-1 mb-4">
-        <h2 className="text-2xl font-bold mb-1 text-white" >Chef's Special</h2>
+        id="menu">
+        <h2 className=" bg-gray-400 text-2xl font-bold text-white" >Chef's Special</h2>
         <div className="bg-white shadow-md p-6 rounded-md flex items-center" style={{  backgroundImage: `url(${background})`, backgroundSize: 'cover', backgroundPosition: 'center', minHeight: '100px' }}>
         <img src={chefspecial}  alt="Featured Dish"  className="w-24 h-24 object-cover rounded-full border-4 border-yellow-300"/>
         <div>
@@ -68,7 +66,7 @@ const Homepage = () => {
         </div>
         </div>
       </section>
-      <footer className="bg-gray-800 text-white text-center py-4 relative z-10">
+      <footer className="bg-black text-white text-center py-2 relative z-10">
         <Footer />
       </footer>
     </div>

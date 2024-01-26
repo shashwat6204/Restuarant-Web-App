@@ -1,0 +1,44 @@
+/* menuPage.css */
+
+/* Add your custom styles here */
+.menu-section {
+    padding: 1.5rem;
+    background-color: #ffecb3; /* Light yellow background color */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    border-radius: 10px; /* Rounded corners */
+}
+
+.menu-category {
+    margin-bottom: 1.5rem;
+}
+
+.menu-category-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #ff6f61; /* Coral color */
+}
+
+.menu-item {
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu-item-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.menu-item-name {
+    font-weight: bold;
+    color: #004e92; /* Cobalt blue color */
+}
+
+.menu-item-price {
+    color: #9b4dca; /* Purple color */
+}

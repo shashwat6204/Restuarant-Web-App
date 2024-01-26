@@ -47,7 +47,7 @@ const ReservationPage = () => {
   return (
     <div className="font-sans">
       {/* Navbar Component */}
-      <header className="bg-gradient-to-r from-primary to-secondary bg-gray-800 text-white text-center py-4 relative z-10">
+      <header className="bg-black text-white py-2">
         <Navbar />
       </header>
 
@@ -158,14 +158,14 @@ const ReservationPage = () => {
               type="submit"
               className="submit-btn"
             >
-              Submit Reservation
+              Book Table
             </button>
           </form>
         </div>
       </section>
 
       {/* Footer Component */}
-      <footer className="footer">
+      <footer className="bg-black text-white text-center py-2 relative z-10">
         <Footer />
       </footer>
     </div>

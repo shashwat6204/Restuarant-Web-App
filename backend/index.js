@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const jwt =require('jsonwebtoken');
-
+require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -14,8 +14,9 @@ app.use(cors({
   origin: 'http://localhost:3000', // Replace with your React app's domain
 }));
 
+const dbURI = process.env.dbURI;
 // Connect to MongoDB
-mongoose.connect('mongodb+srv://shashwatcse6204:Shadow6204@cluster0.z3kjs.mongodb.net/?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.error('MongoDB connection error:', err));
 

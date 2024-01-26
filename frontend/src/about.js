@@ -5,14 +5,14 @@ import './index.css';
 
 const AboutUsPage = () => {
   return (
-    <div className="font-sans bg-gray-100 min-h-screen">
+    <div className="font-sans bg-gray-400 min-h-screen">
       {/* Navbar Component */}
-      <header className="bg-gradient-to-r from-primary to-secondary text-white py-4">
+      <header className="bg-black text-white py-2">
         <Navbar />
       </header>
 
       {/* About Us Section */}
-      <section className="container mx-auto mt-8 p-8 bg-white shadow-md rounded-md">
+      <section className="bg-gray-100 container mx-auto mt-8 p-8 shadow-md rounded-md">
         <h2 className="text-4xl font-bold mb-6 text-accent">Welcome to Maple Leaf</h2>  
         <p className="text-gray-700 mb-4">
           Indulge in a culinary journey at Maple Leaf, where each dish is a masterpiece. We are
@@ -47,7 +47,7 @@ const AboutUsPage = () => {
       </section>
 
       {/* Footer Component */}
-      <footer className="bg-gray-800 text-white text-center py-4 relative z-10">
+      <footer className="bg-black text-white text-center py-2 relative z-10">
         <Footer />
       </footer>
     </div>
